@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>课堂助手</title>
+        <link href="../css/css_home.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="../../node_modules/mdui/dist/css/mdui.min.css">
+    </head>
+    <body class="mdui-theme-layout-auto mdui-theme-primary-pink">
+        <div class="mdui-appbar">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon" style="display: flex; align-items: center;">
+                    <img src="../public/favicon.ico" width="32" height="32" style="margin-left: 4px;"/>
+                </a>
+                <a href="javascript:;" class="mdui-typo-title">课堂助手</a>
+                <div class="mdui-toolbar-spacer"></div>
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '刷新课表'}" id="home-refresh">
+                    <i class="mdui-icon material-icons">refresh</i>
+                </a>
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon" id="home-help" mdui-tooltip="{content: '帮助'}">
+                    <i class="mdui-icon material-icons">help</i>
+                </a>
+            </div>
+        </div>
+        <div class="home-container-part">
+            <div class="home-siderbar-part">
+                <div class="home-siderbar-widget">
+                    <img src="../public/class_sheet.svg" />
+                    <span>简易课表</span>
+                </div>
+                <div style="height: 0.7rem;"></div>
+                <div class="home-siderbar-widget" id="home-go-paper">
+                    <img src="../public/papers.svg" />
+                    <span>资料仓库</span>
+                </div>
+                <div style="height: 0.7rem;"></div>
+                <div class="home-siderbar-widget">
+                    <img src="../public/review.svg" />
+                    <span>课前提问</span>
+                </div>
+                <div style="height: 0.7rem;"></div>
+                <div class="home-siderbar-widget" id="settings">
+                    <img src="../public/settings.svg" />
+                    <span>软件设置</span>
+                </div>
+            </div>
+            <div class="home-stage-part">
+                <table border="1" align="0 auto" style="user-select: none; width: 100%; height: 100%;">
+                    <tr>                
+                     <th style="font-size: small;" id="home-go-edit">点此编辑</th>                
+                     <th>星期一</th>                 
+                     <th>星期二</th>                
+                     <th>星期三</th>                 
+                     <th>星期四</th>                 
+                     <th>星期五</th>                
+                     <th>星期六</th>                
+                     <th>星期日</th>                
+                    </tr>                
+                    <tr class="a2">
+                     <td>第一、二节</td>
+                     <td id="a-1"></td>
+                     <td id="b-1"></td>
+                     <td id="c-1"></td>
+                     <td id="d-1"></td>
+                     <td id="e-1"></td>
+                     <td id="f-1"></td>
+                     <td id="g-1"></td>
+                    </tr>                 
+                    <tr>
+                     <td>第三、四节</td>
+                     <td id="a-2"></td>
+                     <td id="b-2"></td>
+                     <td id="c-2"></td>
+                     <td id="d-2"></td>
+                     <td id="e-2"></td>
+                     <td id="f-2"></td>
+                     <td id="g-2"></td>
+                    </tr>                
+                    <tr class="a2">                
+                     <td>第五、六节</td>
+                     <td id="a-3"></td>
+                     <td id="b-3"></td>
+                     <td id="c-3"></td>
+                     <td id="d-3"></td>
+                     <td id="e-3"></td>
+                     <td id="f-3"></td>
+                     <td id="g-3"></td>
+                    </tr>                
+                    <tr>                
+                     <td>第七、八节</td>
+                     <td id="a-4"></td>
+                     <td id="b-4"></td>
+                     <td id="c-4"></td>
+                     <td id="d-4"></td>
+                     <td id="e-4"></td>
+                     <td id="f-4"></td>
+                     <td id="g-4"></td>
+                    </tr>                
+                    <tr>                
+                     <td>第九、十节</td>
+                     <td id="a-5"></td>
+                     <td id="b-5"></td>
+                     <td id="c-5"></td>
+                     <td id="d-5"></td>
+                     <td id="e-5"></td>
+                     <td id="f-5"></td>
+                     <td id="g-5"></td>
+                    </tr>
+                   </table>
+            </div>
+        </div>
+        <script src="../renderer/home_rnd.js"></script>
+        <script src="../../node_modules/mdui/dist/js/mdui.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>课堂助手·修改课表（图形化模式）</title>
+    <link href="../css/css_modify_sheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../node_modules/mdui/dist/css/mdui.min.css">
+</head>
+
+<body class="mdui-theme-layout-auto mdui-appbar-with-toolbar mdui-theme-primary-pink" style="overflow-y: scroll;">
+    <div class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon" style="display: flex; align-items: center;">
+                <img src="../public/favicon.ico" width="32" height="32" style="margin-left: 4px;"/>
+            </a>
+            <a href="javascript:;" class="mdui-typo-headline">课堂助手</a>
+            <a href="javascript:;" class="mdui-typo-title">课表编辑</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons" id="modify-save">save</i>
+            </a>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon" id="modify-help">
+                <i class="mdui-icon material-icons">help</i>
+            </a>
+        </div>
+    </div>
+    <div style="height: 100%;" class="mdui-container">
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周一第一大节</label>
+                        <input class="mdui-textfield-input" id="a1" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="a1n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周一第二大节</label>
+                        <input class="mdui-textfield-input" id="a2" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="a2n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周一第三大节</label>
+                        <input class="mdui-textfield-input" id="a3" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="a3n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周一第四大节</label>
+                        <input class="mdui-textfield-input" id="a4" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="a4n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-class-item mdui-card">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">周一第五大节</label>
+                <input class="mdui-textfield-input" id="a5" type="text" />
+                <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">本课备注：</label>
+                <input class="mdui-textfield-input" id="a5n" type="text" />
+                <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+            </div>
+        </div>
+        <div class="mdui-divider" style="margin-top: 4px; margin-bottom: 4px;"></div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周二第一大节</label>
+                        <input class="mdui-textfield-input" id="b1" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="b1n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周二第二大节</label>
+                        <input class="mdui-textfield-input" id="b2" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="b2n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周二第三大节</label>
+                        <input class="mdui-textfield-input" id="b3" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="b3n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周二第四大节</label>
+                        <input class="mdui-textfield-input" id="b4" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="b4n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-class-item mdui-card">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">周二第五大节</label>
+                <input class="mdui-textfield-input" id="b5" type="text" />
+                <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">本课备注：</label>
+                <input class="mdui-textfield-input" id="b5n" type="text" />
+                <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+            </div>
+        </div>
+        <div class="mdui-divider" style="margin-top: 4px; margin-bottom: 4px;"></div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周三第一大节</label>
+                        <input class="mdui-textfield-input" id="c1" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="c1n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周三第二大节</label>
+                        <input class="mdui-textfield-input" id="c2" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="c2n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周三第三大节</label>
+                        <input class="mdui-textfield-input" id="c3" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="c3n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周三第四大节</label>
+                        <input class="mdui-textfield-input" id="c4" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="c4n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-class-item mdui-card">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">周三第五大节</label>
+                <input class="mdui-textfield-input" id="c5" type="text" />
+                <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">本课备注：</label>
+                <input class="mdui-textfield-input" id="c5n" type="text" />
+                <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+            </div>
+        </div>
+        <div class="mdui-divider" style="margin-top: 4px; margin-bottom: 4px;"></div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周四第一大节</label>
+                        <input class="mdui-textfield-input" id="d1" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="d1n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周四第二大节</label>
+                        <input class="mdui-textfield-input" id="d2" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="d2n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周四第三大节</label>
+                        <input class="mdui-textfield-input" id="d3" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="d3n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周四第四大节</label>
+                        <input class="mdui-textfield-input" id="d4" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="d4n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-class-item mdui-card">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">周四第五大节</label>
+                <input class="mdui-textfield-input" id="d5" type="text" />
+                <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">本课备注：</label>
+                <input class="mdui-textfield-input" id="d5n" type="text" />
+                <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+            </div>
+        </div>
+        <div class="mdui-divider" style="margin-top: 4px; margin-bottom: 4px;"></div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周五第一大节</label>
+                        <input class="mdui-textfield-input" id="e1" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="e1n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周五第二大节</label>
+                        <input class="mdui-textfield-input" id="e2" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="e2n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周五第三大节</label>
+                        <input class="mdui-textfield-input" id="e3" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="e3n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周五第四大节</label>
+                        <input class="mdui-textfield-input" id="e4" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="e4n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-class-item mdui-card">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">周五第五大节</label>
+                <input class="mdui-textfield-input" id="e5" type="text" />
+                <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">本课备注：</label>
+                <input class="mdui-textfield-input" id="e5n" type="text" />
+                <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+            </div>
+        </div>
+        <div class="mdui-divider" style="margin-top: 4px; margin-bottom: 4px;"></div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周六第一大节</label>
+                        <input class="mdui-textfield-input" id="f1" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="f1n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周六第二大节</label>
+                        <input class="mdui-textfield-input" id="f2" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="f2n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周六第三大节</label>
+                        <input class="mdui-textfield-input" id="f3" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="f3n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周六第四大节</label>
+                        <input class="mdui-textfield-input" id="f4" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="f4n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-class-item mdui-card">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">周六第五大节</label>
+                <input class="mdui-textfield-input" id="f5" type="text" />
+                <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">本课备注：</label>
+                <input class="mdui-textfield-input" id="f5n" type="text" />
+                <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+            </div>
+        </div>
+        <div class="mdui-divider" style="margin-top: 4px; margin-bottom: 4px;"></div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周日第一大节</label>
+                        <input class="mdui-textfield-input" id="g1" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="g1n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周日第二大节</label>
+                        <input class="mdui-textfield-input" id="g2" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="g2n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-row">
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周日第三大节</label>
+                        <input class="mdui-textfield-input" id="g3" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="g3n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-col-xs-6">
+                <div class="single-class-item mdui-card">
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">周日第四大节</label>
+                        <input class="mdui-textfield-input" id="g4" type="text" />
+                        <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+                    </div>
+                    <div class="mdui-textfield mdui-textfield-floating-label">
+                        <label class="mdui-textfield-label">本课备注：</label>
+                        <input class="mdui-textfield-input" id="g4n" type="text" />
+                        <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-class-item mdui-card">
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">周日第五大节</label>
+                <input class="mdui-textfield-input" id="g5" type="text" />
+                <div class="mdui-textfield-helper">填写格式为：课程名@上课地点；如没课，请输入一个小写字母n。</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label">本课备注：</label>
+                <input class="mdui-textfield-input" id="g5n" type="text" />
+                <div class="mdui-textfield-helper">本框不支持换行输入。留空请输入一个小写字母n。</div>
+            </div>
+        </div>
+    </div>
+    <script src="../renderer/modify_rnd.js"></script>
+    <script src="../../node_modules/mdui/dist/js/mdui.min.js"></script>
+</body>
+
+</html>

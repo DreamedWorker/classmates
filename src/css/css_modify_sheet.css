@@ -1,0 +1,18 @@
+@import "./base.css";
+@import "./css_home.css";
+
+input {
+    width: 100%;
+}
+
+label {
+    width: 100%;
+}
+
+.single-class-item {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

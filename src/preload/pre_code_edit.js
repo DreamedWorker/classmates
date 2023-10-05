@@ -1,0 +1,44 @@
+const { languages, CodeEditElement } = require("code-edit");
+
+customElements.define("code-edit", CodeEditElement)
+
+const style = document.createElement('style')
+style.textContent = /*css*/ `
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #333;
+}
+pre {
+  color: var(--color);
+  background: var(--background);
+}
+code-edit {
+  margin: 15px;
+  padding: 15px;
+  width: 300px;
+  height: 100px;
+  font-family: monospace;
+  resize: both;
+}
+`
+
+window.addEventListener("DOMContentLoaded", () => {
+    document.head.appendChild(style)
+    document.body.innerHTML = /*html*/ `
+<code-edit id="demo" autoresize autofocus language="js" theme="laser">export interface HTMLCodeEditElement {
+  value?: string
+  language?: string
+  syntax?: SyntaxDefinition | Promise&lt;{ default: SyntaxDefinition }&gt;
+  theme?: string
+  tabsize?: number
+  tabstyle?: 'tabs' | 'spaces'
+  comments?: string
+}</code-edit>
+`
+})
