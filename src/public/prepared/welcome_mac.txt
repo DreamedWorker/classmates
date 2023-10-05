@@ -2,3 +2,5 @@ Welcome to download and use Classmates. This application is with the aim of help
 You can know what the next class is and where the class will be on at the end of the current class.
 You can manage your notes and relative documents easily.
 Follow the following steps to install it to your computer and then enjoy it.
+
+Notice: This software is open-source and does not contain any warranty. All your actions are considered voluntary.

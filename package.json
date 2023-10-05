@@ -40,7 +40,8 @@
     "pkg": {
       "installLocation": "/Applications",
       "allowAnywhere": false,
-      "welcome": "src/public/prepared/welcome_mac.txt"
+      "welcome": "src/public/prepared/welcome_mac.txt",
+      "license": "LICENSE"
     },
     "nsis": {
       "oneClick": false,
@@ -50,7 +51,8 @@
       "createStartMenuShortcut": true,
       "shortcutName": "课堂助手",
       "installerIcon": "build/icons/icon.ico",
-      "uninstallerIcon": "build/icons/icon.ico"
+      "uninstallerIcon": "build/icons/icon.ico",
+      "license": "LICENSE"
     }
   }
 }
