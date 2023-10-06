@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>新增Q&A（测试）</title>
+        <link rel="stylesheet" href="../../node_modules/mdui/dist/css/mdui.min.css">
+    </head>
+    <body class="mdui-container mdui-theme-layout-auto mdui-theme-primary-pink">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">问题标题</label>
+            <input class="mdui-textfield-input" id="q-a"/>
+        </div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">提示性文本</label>
+            <input class="mdui-textfield-input" id="q-b"/>
+        </div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">详细信息</label>
+            <textarea class="mdui-textfield-input" type="textarea" id="q-c"></textarea>
+            <div class="mdui-textfield-helper">如需换行，请输入《br》（输入时将中文的书名号改为英文的）再回车，否则仅能显示空格。</div>
+        </div>
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" id="q-save">保存</button>
+        <button class="mdui-btn mdui-btn-raised mdui-ripple" id="q-cancel">取消</button>
+        <script src="../../node_modules/mdui/dist/js/mdui.min.js"></script>
+    </body>
+</html>

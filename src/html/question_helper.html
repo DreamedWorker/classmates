@@ -14,16 +14,22 @@
                 <a href="javascript:;" class="mdui-typo-headline">课堂助手</a>
                 <a href="javascript:;" class="mdui-typo-title">课前提问</a>
                 <div class="mdui-toolbar-spacer"></div>
-                <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{ content: '增加一项'}">
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon" id="question-add"
+                    mdui-tooltip="{ content: '增加一项'}">
                     <i class="mdui-icon material-icons">add</i>
+                </a>
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon" id="question-refresh"
+                    mdui-tooltip="{ content: '刷新问题库'}">
+                    <i class="mdui-icon material-icons">refresh</i>
                 </a>
             </div>
         </div>
         <div class="mdui-card" style="width: 100%; height: 45vh; margin-top: 1rem; padding: 4px; overflow-y: auto;">
             <div class="mdui-typo-display-3" id="question-tips" style="width: 100%; text-align: center;">小提示会显示在此处</div>
-            <div class="mdui-typo-headline" id="question-details" style="margin-top: 4px;">问题细节会显示在此</div>
+            <div class="mdui-typo-headline" id="question-title" style="margin-top: 4px;">问题标题会显示在这里</div>
+            <div class="mdui-typo-subheading" id="question-details" style="margin-top: 4px;">问题细节会显示在此</div>
         </div>
-        <div class="mdui-textfield mdui-textfield-expandable mdui-float-right" style="margin-top: 0.7rem;">
+        <!--此功能正在酝酿中 <div class="mdui-textfield mdui-textfield-expandable mdui-float-right" style="margin-top: 0.7rem;" disabled>
             <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"
                 mdui-tooltip="{ content: '点按搜索问题'}">
               <i class="mdui-icon material-icons">search</i>
@@ -33,7 +39,7 @@
                 mdui-tooltip="{ content: '清空并关闭'}">
               <i class="mdui-icon material-icons">close</i>
             </button>
-        </div>
+        </div> -->
         <div class="mdui-card" style="width: 100%; height: 35vh; margin-top: 1rem; padding: 4px; overflow-y: auto;">
             <ul class="mdui-list" id="question-list"></ul>
         </div>
