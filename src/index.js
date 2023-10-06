@@ -25,7 +25,6 @@ const createMainWindow = () => {
             preload: path.join(__dirname, "/preload/pre_home.js")
         }
     })
-    win.webContents.openDevTools()
     win.loadFile(path.join(__dirname, "/html/home.html"))
 }
 
