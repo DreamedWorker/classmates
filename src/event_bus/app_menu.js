@@ -1,4 +1,5 @@
-const { Menu } = require("electron")
+const { Menu, BrowserWindow } = require("electron")
+const path = require("path")
 
 const isMac = process.platform === 'darwin'
 
@@ -25,7 +26,21 @@ const temple = [
         {
             label: '文件',
             submenu: [
-                { label: '开放源代码许可' },
+                { label: '开放源代码许可',
+                    click: () => {
+                        const openSource = () => {
+                            const win = new BrowserWindow({
+                                width: 800,
+                                height: 600,
+                                webPreferences: {
+                                    sandbox: false
+                                }
+                            })
+                            win.loadFile(path.join(__dirname, "../html/open_source.html"))
+                        }
+                        openSource()
+                    }
+             },
                 isMac ? { role: 'close', label: '关闭窗口' } : { role: 'quit', label: '退出程序' },
             ]
         },
