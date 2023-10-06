@@ -1,4 +1,4 @@
-const { existsSync, copyFileSync } = require("fs")
+const { existsSync, copyFileSync, mkdirSync } = require("fs")
 const { app } = require("electron")
 const path = require("path")
 
@@ -24,9 +24,22 @@ const writeDefaultAddress = () => {
     }
 }
 
+const writeDefaultQuestion = () => {
+    //将默认的提问提示写入文件系统
+    const containsSheet = existsSync(`${app.getPath("userData")}/q2a/question_example.json`)
+    if (!containsSheet){
+        mkdirSync(`${app.getPath("userData")}/q2a`)
+        copyFileSync(
+            path.join(__dirname, "../public/prepared/question_example.json"),
+            `${app.getPath("userData")}/q2a/question_example.json`
+        )
+    }
+}
+
 function initFs() {
     writeDefaultSheet()
     writeDefaultAddress()
+    writeDefaultQuestion()
 }
 
 const appInit = {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>提问帮手（测试）</title>
+        <link rel="stylesheet" href="../../node_modules/mdui/dist/css/mdui.min.css">
+    </head>
+    <body class="mdui-theme-layout-auto mdui-theme-primary-pink mdui-appbar-with-toolbar mdui-container-fluid">
+        <div class="mdui-appbar mdui-appbar-fixed">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon" style="display: flex; align-items: center;">
+                    <img src="../public/favicon.ico" width="32" height="32" style="margin-left: 4px;" />
+                </a>
+                <a href="javascript:;" class="mdui-typo-headline">课堂助手</a>
+                <a href="javascript:;" class="mdui-typo-title">课前提问</a>
+                <div class="mdui-toolbar-spacer"></div>
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-tooltip="{ content: '增加一项'}">
+                    <i class="mdui-icon material-icons">add</i>
+                </a>
+            </div>
+        </div>
+        <div class="mdui-card" style="width: 100%; height: 45vh; margin-top: 1rem; padding: 4px; overflow-y: auto;">
+            <div class="mdui-typo-display-3" id="question-tips" style="width: 100%; text-align: center;">小提示会显示在此处</div>
+            <div class="mdui-typo-headline" id="question-details" style="margin-top: 4px;">问题细节会显示在此</div>
+        </div>
+        <div class="mdui-textfield mdui-textfield-expandable mdui-float-right" style="margin-top: 0.7rem;">
+            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"
+                mdui-tooltip="{ content: '点按搜索问题'}">
+              <i class="mdui-icon material-icons">search</i>
+            </button>
+            <input class="mdui-textfield-input" type="text" placeholder="键入以搜索"/>
+            <button class="mdui-textfield-close mdui-btn mdui-btn-icon"
+                mdui-tooltip="{ content: '清空并关闭'}">
+              <i class="mdui-icon material-icons">close</i>
+            </button>
+        </div>
+        <div class="mdui-card" style="width: 100%; height: 35vh; margin-top: 1rem; padding: 4px; overflow-y: auto;">
+            <ul class="mdui-list" id="question-list"></ul>
+        </div>
+        <script src="../../node_modules/mdui/dist/js/mdui.min.js"></script>
+    </body>
+</html>

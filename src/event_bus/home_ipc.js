@@ -3,6 +3,7 @@ const { readFileSync } = require("node:fs");
 const modifyIpcs = require("./modify_ipc");
 const path = require("node:path");
 const paperIpcs = require("./paper_bus");
+const questionIpcs = require("./question_ipc");
 
 function readClassSheet() {
     return readFileSync(`${app.getPath("userData")}/sheet.json`, "utf-8")
@@ -18,6 +19,19 @@ function showFileManager() {
         }
     })
     managerWindow.loadFile(path.join(__dirname, "../html/paper_manager.html"))
+}
+
+function showQuestionManager() {
+    const managerWindow = new BrowserWindow({
+        width: 1280,
+        height: 768,
+        webPreferences: {
+            sandbox: false,
+            preload: path.join(__dirname, "../preload/pre_question.js")
+        }
+    })
+    managerWindow.webContents.openDevTools()
+    managerWindow.loadFile(path.join(__dirname, "../html/question_helper.html"))
 }
 
 function homeIpcs() {
@@ -64,8 +78,12 @@ function homeIpcs() {
     ipcMain.on("go-paper", () => {
         showFileManager()
     })
+    ipcMain.on("go-question", () => {
+        showQuestionManager()
+    })
     modifyIpcs.modifySheetIpc()
     paperIpcs.paperIpc()
+    questionIpcs.questionIpc()
 }
 
 const allIpcs = {

@@ -11,7 +11,7 @@
     "electron:build-icons": "electron-icon-builder --input=./src/public/crafting_table_0.png --output=build --flatten"
   },
   "author": "梦之黯蓝 (BlueDream)",
-  "license": "ISC",
+  "license": "LICENSE",
   "devDependencies": {
     "electron": "^26.2.2",
     "electron-builder": "^24.6.4",

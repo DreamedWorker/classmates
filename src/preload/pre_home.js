@@ -5,7 +5,8 @@ contextBridge.exposeInMainWorld("homeEvt", {
     tester: () => ipcRenderer.send("tester-aa"),
     showHelper: () => ipcRenderer.send("show-home-help"),
     goChangeSheet: () => ipcRenderer.send("go-class-change"),
-    goPaperWin: () => ipcRenderer.send("go-paper")
+    goPaperWin: () => ipcRenderer.send("go-paper"),
+    goQuestionWin: () => ipcRenderer.send("go-question")
 })
 
 window.addEventListener("DOMContentLoaded", () => {
