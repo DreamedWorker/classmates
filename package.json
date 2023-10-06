@@ -23,6 +23,7 @@
     "electron-log": "^4.4.8",
     "mdui": "^1.0.2",
     "path": "^0.12.7",
+    "silly-datetime": "^0.1.2",
     "update-electron-app": "^2.0.1"
   },
   "build": {

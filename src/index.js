@@ -35,7 +35,7 @@ app.whenReady().then(() => {
     appInit.initFs() //初始化工作目录
     AppTray.makeTray()
     Menu.setApplicationMenu(globalMenu.menu)
-    //mTimer.globalTimer()
+    mTimer.globalTimer()
     createMainWindow()
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0){
