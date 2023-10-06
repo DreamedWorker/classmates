@@ -30,7 +30,6 @@ function showQuestionManager() {
             preload: path.join(__dirname, "../preload/pre_question.js")
         }
     })
-    managerWindow.webContents.openDevTools()
     managerWindow.loadFile(path.join(__dirname, "../html/question_helper.html"))
 }
 

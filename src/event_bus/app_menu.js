@@ -15,7 +15,13 @@ const temple = [
                 { role: 'quit', label: '退出 课堂助手' }
             ]
         }]
-        : [{}]),
+        : [{
+            label: '课堂助手',
+            submenu: [
+                { role: 'about', label: '关于 课堂助手' },
+                { role: 'quit', label: '退出 课堂助手' }
+            ]
+        }]),
         {
             label: '文件',
             submenu: [
@@ -50,10 +56,10 @@ const temple = [
             label: '帮助',
             submenu: [
               {
-                label: '官网',
+                label: '官网（项目仓库）',
                 click: async () => {
                   const { shell } = require('electron')
-                  await shell.openExternal('https://electronjs.org')
+                  await shell.openExternal('https://github.com/DreamedWorker/classmates')
                 }
               }
             ]
