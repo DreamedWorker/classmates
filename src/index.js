@@ -6,6 +6,12 @@ const AppTray = require("./event_bus/app_tray")
 const appInit = require("./event_bus/init_bus")
 const globalMenu = require("./event_bus/app_menu")
 
+require("update-electron-app")({
+    repo: "DreamedWorker/classmates",
+    updateInterval: "1 hour",
+    logger: require("electron-log")
+})
+
 try {
     require("electron-reloader")(module)
 } catch(_) {}

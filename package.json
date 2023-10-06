@@ -20,8 +20,10 @@
   },
   "dependencies": {
     "config": "^3.3.9",
+    "electron-log": "^4.4.8",
     "mdui": "^1.0.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "update-electron-app": "^2.0.1"
   },
   "build": {
     "appId": "com.dream.classmate",
@@ -34,7 +36,10 @@
       "icon": "build/icons/icon.ico"
     },
     "mac": {
-      "target": [ "dmg", "pkg" ],
+      "target": [
+        "dmg",
+        "pkg"
+      ],
       "icon": "build/icons/icon.icns"
     },
     "pkg": {
