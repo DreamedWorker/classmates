@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "electron-builder --mac",
     "publish:win": "electron-builder --win",
-    "electron:build-icons": "electron-icon-builder --input=./src/public/crafting_table_0.png --output=build --flatten"
+    "electron:build-icons": "electron-icon-builder --input=./src/public/ic_launcher.png --output=build --flatten"
   },
   "author": "梦之黯蓝 (BlueDream)",
   "license": "LICENSE",
